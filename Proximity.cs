@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -25,7 +26,7 @@ namespace ProximityAlert
         private static DateTime _lastPlayed;
         private static readonly object Locker = new object();
         private static readonly List<StaticEntity> NearbyPaths = new List<StaticEntity>();
-        private readonly Queue<Entity> _entityAddedQueue = new Queue<Entity>();
+        private readonly ConcurrentQueue<Entity> _entityAddedQueue = new ConcurrentQueue<Entity>();
         private IngameState _ingameState;
         private RectangleF _windowArea;
 
@@ -123,9 +124,8 @@ namespace ProximityAlert
 
         private void TickLogic()
         {
-            while (_entityAddedQueue.Count > 0)
+            while (_entityAddedQueue.TryDequeue(out var entity))
             {
-                var entity = _entityAddedQueue.Dequeue();
                 if (entity.IsValid && !entity.IsAlive) continue;
                 if (!entity.IsHostile || !entity.IsValid) continue;
                 if (!Settings.ShowModAlerts) continue;
@@ -136,8 +136,7 @@ namespace ProximityAlert
                         var mods = entity.GetComponent<ObjectMagicProperties>().Mods;
                         if (mods != null)
                         {
-                            var modMatch = mods.FirstOrDefault(x => _modDict.ContainsKey(x));
-                            var filter = _modDict[modMatch ?? string.Empty];
+                            var filter = mods.Select(x => _modDict.GetValueOrDefault(x)).FirstOrDefault(x => x != null);
                             if (filter != null)
                             {
                                 entity.SetHudComponent(new ProximityAlert(entity, filter.Color));
@@ -145,10 +144,6 @@ namespace ProximityAlert
                                 {
                                     PlaySound(filter.SoundFile);
                                 }
-                            }
-                            else
-                            {
-                                return;
                             }
                         }
                     }
@@ -425,8 +420,7 @@ namespace ProximityAlert
                 if (!Entity.HasComponent<ObjectMagicProperties>() || !Entity.IsAlive) return;
                 var mods = Entity.GetComponent<ObjectMagicProperties>()?.Mods;
                 if (mods == null || mods.Count <= 0) return;
-                var modMatch = mods.FirstOrDefault(x => _modDict.ContainsKey(x));
-                var filter = _modDict[modMatch ?? string.Empty];
+                var filter = mods.Select(x => _modDict.GetValueOrDefault(x)).FirstOrDefault(x => x != null);
                 if (filter == null) return;
                 Name = filter.Text;
                 Color = filter.Color;
