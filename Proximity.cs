@@ -249,13 +249,13 @@ namespace ProximityAlert
                                 x.Type == EntityType.Monster ||
                                 x.Type == EntityType.IngameIcon ||
                                 x.Type == EntityType.MiscellaneousObjects)
+                    .Where(entity => !entity.HasComponent<Chest>() || !entity.IsOpened)
+                    .Where(entity => !entity.HasComponent<Monster>() || (entity.IsAlive && entity.IsValid))
                     .OrderBy(x => x.DistancePlayer))
                 {
                     var match = false;
                     var lineColor = Color.White;
                     var lineText = "";
-                    if (entity.HasComponent<Chest>() && entity.IsOpened) continue;
-                    if (entity.HasComponent<Monster>() && (!entity.IsAlive || !entity.IsValid)) continue;
                     var soundStatus = entity.GetHudComponent<SoundStatus>();
                     soundStatus?.ResetIfInvalid();
                     if (entity.Type == EntityType.IngameIcon &&
