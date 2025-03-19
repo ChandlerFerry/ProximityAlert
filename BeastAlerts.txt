@@ -1,52 +1,52 @@
 #Mod Contains;Name in tooltip;RGBA colour code;distance to render, -1 for always, -2 for while valid;Sound
-Black Mórrigan;Black Mórrigan;00FFFFFF;-1;seed
-Craiceann, First of the Deep;Craiceann, First of the Deep;00FFFFFF;-1;seed
-Craicic Chimeral;Craicic Chimeral;00FFFFFF;-1;seed
-Craicic Maw;Craicic Maw;00FFFFFF;-1;seed
-Craicic Sand Spitter;Craicic Sand Spitter;00FFFFFF;-1;seed
-Craicic Savage Crab;Craicic Savage Crab;00FFFFFF;-1;seed
-Craicic Shield Crab;Craicic Shield Crab;00FFFFFF;-1;seed
-Craicic Spider Crab;Craicic Spider Crab;00FFFFFF;-1;seed
-Craicic Squid;Craicic Squid;00FFFFFF;-1;seed
-Craicic Vassal;Craicic Vassal;00FFFFFF;-1;seed
-Craicic Watcher;Craicic Watcher;00FFFFFF;-1;seed
-Farric Ape;Farric Ape;00FFFFFF;-1;seed
-Farric Chieftain;Farric Chieftain;00FFFFFF;-1;seed
-Farric Flame Hellion Alpha;Farric Flame Hellion Alpha;00FFFFFF;-1;seed
-Farric Frost Hellion Alpha;Farric Frost Hellion Alpha;00FFFFFF;-1;seed
-Farric Gargantuan;Farric Gargantuan;00FFFFFF;-1;seed
-Farric Goatman;Farric Goatman;00FFFFFF;-1;seed
-Farric Goliath;Farric Goliath;00FFFFFF;-1;seed
-Farric Lynx Alpha;Farric Lynx Alpha;00FFFFFF;-1;seed
-Farric Magma Hound;Farric Magma Hound;00FFFFFF;-1;seed
-Farric Pit Hound;Farric Pit Hound;00FFFFFF;-1;seed
-Farric Taurus;Farric Taurus;00FFFFFF;-1;seed
-Farric Tiger Alpha;Farric Tiger Alpha;00FFFFFF;-1;seed
-Farric Ursa;Farric Ursa;00FFFFFF;-1;seed
-Farric Wolf Alpha;Farric Wolf Alpha;00FFFFFF;-1;seed
-Farrul, First of the Plains;Farrul, First of the Plains;00FFFFFF;-1;seed
-Fenumal Devourer;Fenumal Devourer;00FFFFFF;-1;seed
-Fenumal Hybrid Arachnid;Fenumal Hybrid Arachnid;00FFFFFF;-1;seed
-Fenumal Plagued Arachnid;Fenumal Plagued Arachnid;00FFFFFF;-1;seed
-Fenumal Queen;Fenumal Queen;00FFFFFF;-1;seed
-Fenumal Scorpion;Fenumal Scorpion;00FFFFFF;-1;seed
-Fenumal Scrabbler;Fenumal Scrabbler;00FFFFFF;-1;seed
-Fenumal Widow;Fenumal Widow;00FFFFFF;-1;seed
-Fenumus, First of the Night;Fenumus, First of the Night;00FFFFFF;-1;seed
-Primal Crushclaw;Primal Crushclaw;00FFFFFF;-1;seed
-Primal Cystcaller;Primal Cystcaller;00FFFFFF;-1;seed
-Primal Rhex Matriarch;Primal Rhex Matriarch;00FFFFFF;-1;seed
-Saqawal, First of the Sky;Saqawal, First of the Sky;00FFFFFF;-1;seed
-Saqawine Blood Viper;Saqawine Blood Viper;00FFFFFF;-1;seed
-Saqawine Chimeral;Saqawine Chimeral;00FFFFFF;-1;seed
-Saqawine Cobra;Saqawine Cobra;00FFFFFF;-1;seed
-Saqawine Retch;Saqawine Retch;00FFFFFF;-1;seed
-Saqawine Rhex;Saqawine Rhex;00FFFFFF;-1;seed
-Saqawine Rhoa;Saqawine Rhoa;00FFFFFF;-1;seed
-Saqawine Vulture;Saqawine Vulture;00FFFFFF;-1;seed
-Vivid Abberarach;Vivid Abberarach;00FFFFFF;-1;seed
-Vivid Vulture;Vivid Vulture;00FFFFFF;-1;seed
-Vivid Watcher;Vivid Watcher;00FFFFFF;-1;seed
-Wild Brambleback;Wild Brambleback;00FFFFFF;-1;seed
-Wild Bristle Matron;Wild Bristle Matron;00FFFFFF;-1;seed
-Wild Hellion Alpha;Wild Hellion Alpha;00FFFFFF;-1;seed
+Black Mórrigan;Black Mórrigan;00FFFFFF;-2;albino
+#Craiceann, First of the Deep;Craiceann, First of the Deep;00FFFFFF;-2;seed
+Craicic Chimeral;Craicic Chimeral;00FFFFFF;-2;albino
+#Craicic Maw;Craicic Maw;00FFFFFF;-2;seed
+#Craicic Sand Spitter;Craicic Sand Spitter;00FFFFFF;-2;seed
+#Craicic Savage Crab;Craicic Savage Crab;00FFFFFF;-2;seed
+#Craicic Shield Crab;Craicic Shield Crab;00FFFFFF;-2;seed
+Craicic Spider Crab;Craicic Spider Crab;00FFFFFF;-2;albino
+#Craicic Squid;Craicic Squid;00FFFFFF;-2;seed
+#Craicic Vassal;Craicic Vassal;00FFFFFF;-2;seed
+#Craicic Watcher;Craicic Watcher;00FFFFFF;-2;seed
+#Farric Ape;Farric Ape;00FFFFFF;-2;seed
+#Farric Chieftain;Farric Chieftain;00FFFFFF;-2;seed
+#Farric Flame Hellion Alpha;Farric Flame Hellion Alpha;00FFFFFF;-2;seed
+#Farric Frost Hellion Alpha;Farric Frost Hellion Alpha;00FFFFFF;-2;seed
+#Farric Gargantuan;Farric Gargantuan;00FFFFFF;-2;seed
+#Farric Goatman;Farric Goatman;00FFFFFF;-2;seed
+#Farric Goliath;Farric Goliath;00FFFFFF;-2;seed
+Farric Lynx Alpha;Farric Lynx Alpha;00FFFFFF;-2;hand
+#Farric Magma Hound;Farric Magma Hound;00FFFFFF;-2;seed
+#Farric Pit Hound;Farric Pit Hound;00FFFFFF;-2;seed
+#Farric Taurus;Farric Taurus;00FFFFFF;-2;seed
+Farric Tiger Alpha;Farric Tiger Alpha;00FFFFFF;-2;albino
+#Farric Ursa;Farric Ursa;00FFFFFF;-2;seed
+Farric Wolf Alpha;Farric Wolf Alpha;00FFFFFF;-2;hand
+#Farrul, First of the Plains;Farrul, First of the Plains;00FFFFFF;-2;seed
+#Fenumal Devourer;Fenumal Devourer;00FFFFFF;-2;seed
+Fenumal Hybrid Arachnid;Fenumal Hybrid Arachnid;00FFFFFF;-2;albino
+Fenumal Plagued Arachnid;Fenumal Plagued Arachnid;00FFFFFF;-2;albino
+#Fenumal Queen;Fenumal Queen;00FFFFFF;-2;seed
+#Fenumal Scorpion;Fenumal Scorpion;00FFFFFF;-2;seed
+#Fenumal Scrabbler;Fenumal Scrabbler;00FFFFFF;-2;seed
+#Fenumal Widow;Fenumal Widow;00FFFFFF;-2;seed
+#Fenumus, First of the Night;Fenumus, First of the Night;00FFFFFF;-2;seed
+Primal Crushclaw;Primal Crushclaw;00FFFFFF;-2;seed
+Primal Cystcaller;Primal Cystcaller;00FFFFFF;-2;albino
+Primal Rhex Matriarch;Primal Rhex Matriarch;00FFFFFF;-2;seed
+#Saqawal, First of the Sky;Saqawal, First of the Sky;00FFFFFF;-2;seed
+#Saqawine Blood Viper;Saqawine Blood Viper;00FFFFFF;-2;seed
+#Saqawine Chimeral;Saqawine Chimeral;00FFFFFF;-2;seed
+#Saqawine Cobra;Saqawine Cobra;00FFFFFF;-2;seed
+#Saqawine Retch;Saqawine Retch;00FFFFFF;-2;seed
+Saqawine Rhex;Saqawine Rhex;00FFFFFF;-2;albino
+#Saqawine Rhoa;Saqawine Rhoa;00FFFFFF;-2;seed
+#Saqawine Vulture;Saqawine Vulture;00FFFFFF;-2;seed
+Vivid Abberarach;Vivid Abberarach;00FFFFFF;-2;albino
+Vivid Vulture;Vivid Vulture;00FFFFFF;-2;albino
+Vivid Watcher;Vivid Watcher;00FFFFFF;-2;albino
+Wild Brambleback;Wild Brambleback;00FFFFFF;-2;albino
+Wild Bristle Matron;Wild Bristle Matron;00FFFFFF;-2;albino
+Wild Hellion Alpha;Wild Hellion Alpha;00FFFFFF;-2;albino
