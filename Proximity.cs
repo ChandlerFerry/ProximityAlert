@@ -341,8 +341,6 @@ namespace ProximityAlert
                     if (Settings.ShowBeastAlerts && !match)
                     {
                         entity.Stats.TryGetValue(GameStat.IsCapturableMonster, out var isBeast);
-
-                        DebugWindow.LogMsg($"IsBeast: {entity.RenderName} {isBeast}");
                         if (isBeast == 1)
                         {
                             ProcessFilters(_beastDict, e => e.RenderName);
