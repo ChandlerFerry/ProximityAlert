@@ -23,6 +23,7 @@ namespace ProximityAlert
         private const string ProximityAlertFolderName = "ProximityAlert";
         private Dictionary<string, Warning> _pathDict = new Dictionary<string, Warning>();
         private Dictionary<string, Warning> _modDict = new Dictionary<string, Warning>();
+        private Dictionary<string, Warning> _beastDict = new Dictionary<string, Warning>();
         private string _soundDir;
         private DateTime _lastPlayed;
         private readonly object _locker = new object();
@@ -32,6 +33,8 @@ namespace ProximityAlert
         private string DefaultModAlertPath => Path.Combine(DirectoryFullName, ModAlertsFileName);
         private string ConfigModAlertPath => Path.Combine("config", ProximityAlertFolderName, ModAlertsFileName);
         private string DefaultPathAlertsPath => Path.Combine(DirectoryFullName, PathAlertsFileName);
+        private string ConfigBeastAlertsPath => Path.Combine("config", ProximityAlertFolderName, "BeastAlerts.txt");
+        private string DefaultBeastAlertsPath => Path.Combine(DirectoryFullName, "BeastAlerts.txt");
 
         public override bool Initialise()
         {
@@ -43,7 +46,7 @@ namespace ProximityAlert
             LoadAlertConfigs();
             Settings.Reload.OnPressed = () =>
             {
-                LogMessage("Reloading ModAlerts & PathAlerts.txt...");
+                LogMessage("Reloading ModAlerts, PathAlerts, & BeastAlerts.txt...");
                 LoadAlertConfigs();
             };
             Settings.CopyDefaultConfigsToConfigFolder.OnPressed = CopyDefaultConfigs;
@@ -60,6 +63,10 @@ namespace ProximityAlert
                        LoadConfig(DefaultModAlertPath, false) ??
                        _modDict ??
                        new Dictionary<string, Warning>();
+            _beastDict = LoadConfig(ConfigBeastAlertsPath, true) ??
+                         LoadConfig(DefaultBeastAlertsPath, false) ??
+                         _beastDict ??
+                         new Dictionary<string, Warning>();
         }
 
         private void CopyDefaultConfigs()
@@ -82,6 +89,16 @@ namespace ProximityAlert
             else
             {
                 File.Copy(DefaultModAlertPath, ConfigModAlertPath);
+            }
+
+            if (File.Exists(ConfigBeastAlertsPath))
+            {
+                new FileInfo(ConfigBeastAlertsPath).Directory?.Create();
+                LogError($"Custom config for beast alerts already exists at {ConfigBeastAlertsPath}");
+            }
+            else
+            {
+                File.Copy(DefaultBeastAlertsPath, ConfigBeastAlertsPath);
             }
         }
 
@@ -288,6 +305,33 @@ namespace ProximityAlert
                     if (!match)
                     {
                         foreach (var filterEntry in _pathDict.Where(x => ePath.Contains(x.Key)).Take(1))
+                        {
+                            var filter = filterEntry.Value;
+                            unopened = $"{filter.Text}\n{unopened}";
+                            if (filter.Distance == -1 || filter.Distance == -2 && entity.IsValid ||
+                                distance < filter.Distance)
+                            {
+                                if (soundStatus == null)
+                                {
+                                    soundStatus = new SoundStatus(this, entity, filter.SoundFile);
+                                    entity.SetHudComponent(soundStatus);
+                                }
+
+                                soundStatus.PlaySoundOnce();
+
+                                lineText = filter.Text;
+                                lineColor = filter.Color;
+                                match = true;
+                                lines++;
+                                break;
+                            }
+                        }
+                    }
+
+                    // Beast Check
+                    if (!match)
+                    {
+                        foreach (var filterEntry in _beastDict.Where(x => entity.RenderName.Contains(x.Key)).Take(1))
                         {
                             var filter = filterEntry.Value;
                             unopened = $"{filter.Text}\n{unopened}";

@@ -1,0 +1,2 @@
+#Mod Contains;Name in tooltip;RGBA colour code;distance to render, -1 for always, -2 for while valid;Sound
+Fenumal Scrabbler;aaaa;6400FFFF;-1;seed

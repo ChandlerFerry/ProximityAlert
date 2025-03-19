@@ -20,6 +20,8 @@ public class ProximitySettings : ISettings
 
     [Menu(null, "By default this covers things such as corrupting blood")]
     public ToggleNode ShowModAlerts { get; set; } = new ToggleNode(false);
+    
+    public ToggleNode ShowBeastAlerts { get; set; } = new ToggleNode(false);
 
     public ToggleNode DrawALineToRealSirus { get; set; } = new ToggleNode(true);
 
