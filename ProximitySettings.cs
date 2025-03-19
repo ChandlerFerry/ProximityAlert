@@ -18,9 +18,9 @@ public class ProximitySettings : ISettings
     public RangeNode<Vector2> AlertPositionOffset { get; set; } = new RangeNode<Vector2>(Vector2.Zero, Vector2.One * -3840, Vector2.One * 2560);
     public ToggleNode EnableMultithreading { get; set; } = new ToggleNode(true);
 
-    [Menu(null, "By default this covers things such as corrupting blood")]
     public ToggleNode ShowBeastAlerts { get; set; } = new ToggleNode(false);
 
+    [Menu(null, "By default this covers things such as corrupting blood")]
     public ToggleNode ShowModAlerts { get; set; } = new ToggleNode(false);
     
     public ToggleNode ShowPathAlerts { get; set; } = new ToggleNode(true);
