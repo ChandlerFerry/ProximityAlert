@@ -33,9 +33,9 @@ Fenumal Plagued Arachnid;Fenumal Plagued Arachnid;00FFFFFF;-2;albino
 #Fenumal Scrabbler;Fenumal Scrabbler;00FFFFFF;-2;seed
 #Fenumal Widow;Fenumal Widow;00FFFFFF;-2;seed
 #Fenumus, First of the Night;Fenumus, First of the Night;00FFFFFF;-2;seed
-Primal Crushclaw;Primal Crushclaw;00FFFFFF;-2;seed
-Primal Cystcaller;Primal Cystcaller;00FFFFFF;-2;albino
-Primal Rhex Matriarch;Primal Rhex Matriarch;00FFFFFF;-2;seed
+Primal Crushclaw;Primal Crushclaw;808080FF;-2;seed
+Primal Cystcaller;Primal Cystcaller;808080FF;-2;seed
+Primal Rhex Matriarch;Primal Rhex Matriarch;808080FF;-2;seed
 #Saqawal, First of the Sky;Saqawal, First of the Sky;00FFFFFF;-2;seed
 #Saqawine Blood Viper;Saqawine Blood Viper;00FFFFFF;-2;seed
 #Saqawine Chimeral;Saqawine Chimeral;00FFFFFF;-2;seed
@@ -44,7 +44,7 @@ Primal Rhex Matriarch;Primal Rhex Matriarch;00FFFFFF;-2;seed
 Saqawine Rhex;Saqawine Rhex;00FFFFFF;-2;albino
 #Saqawine Rhoa;Saqawine Rhoa;00FFFFFF;-2;seed
 #Saqawine Vulture;Saqawine Vulture;00FFFFFF;-2;seed
-Vivid Abberarach;Vivid Abberarach;00FFFFFF;-2;albino
+Vivid Abberarach;Vivid Abberarach;808080FF;-2;seed
 Vivid Vulture;Vivid Vulture;00FFFFFF;-2;albino
 Vivid Watcher;Vivid Watcher;00FFFFFF;-2;albino
 Wild Brambleback;Wild Brambleback;00FFFFFF;-2;albino
