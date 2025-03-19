@@ -383,7 +383,6 @@ namespace ProximityAlert
 
                     var box = new RectangleF(origin.X - 2, origin.Y - margin - lines * height,
                         (192 + 4) * widthMultiplier, margin + lines * height + 4);
-                    Graphics.DrawImage("back.png", box, Color.White);
                     Graphics.DrawLine(new SharpDX.Vector2(origin.X - 15, origin.Y - margin - lines * height),
                         new SharpDX.Vector2(origin.X + (192 + 4) * widthMultiplier,
                             origin.Y - margin - lines * height), 1, Color.White);

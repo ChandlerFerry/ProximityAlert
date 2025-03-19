@@ -6,7 +6,6 @@ Craicic Maw;Craicic Maw;00FFFFFF;-1;seed
 Craicic Sand Spitter;Craicic Sand Spitter;00FFFFFF;-1;seed
 Craicic Savage Crab;Craicic Savage Crab;00FFFFFF;-1;seed
 Craicic Shield Crab;Craicic Shield Crab;00FFFFFF;-1;seed
-Craicic Shield Crab;Craicic Shield Crab;00FFFFFF;-1;seed
 Craicic Spider Crab;Craicic Spider Crab;00FFFFFF;-1;seed
 Craicic Squid;Craicic Squid;00FFFFFF;-1;seed
 Craicic Vassal;Craicic Vassal;00FFFFFF;-1;seed
@@ -43,7 +42,7 @@ Saqawine Chimeral;Saqawine Chimeral;00FFFFFF;-1;seed
 Saqawine Cobra;Saqawine Cobra;00FFFFFF;-1;seed
 Saqawine Retch;Saqawine Retch;00FFFFFF;-1;seed
 Saqawine Rhex;Saqawine Rhex;00FFFFFF;-1;seed
-Saqawine Rhoa;;Saqawine Rhoa;;00FFFFFF;-1;seed
+Saqawine Rhoa;Saqawine Rhoa;00FFFFFF;-1;seed
 Saqawine Vulture;Saqawine Vulture;00FFFFFF;-1;seed
 Vivid Abberarach;Vivid Abberarach;00FFFFFF;-1;seed
 Vivid Vulture;Vivid Vulture;00FFFFFF;-1;seed
