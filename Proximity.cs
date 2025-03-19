@@ -241,6 +241,7 @@ namespace ProximityAlert
                 if (!Settings.Enable) return;
 
                 if (Settings.DrawALineToRealSirus)
+                {
                     foreach (var sEnt in GameController.EntityListWrapper.ValidEntitiesByType[EntityType.Monster]
                         .Where(x => x.Metadata.Equals("Metadata/Monsters/AtlasExiles/AtlasExile5")))
                     {
@@ -252,6 +253,7 @@ namespace ProximityAlert
 
                         Graphics.DrawText(sEnt.DistancePlayer.ToString(CultureInfo.InvariantCulture), new SharpDX.Vector2(0, 0));
                     }
+                }
 
                 var unopened = "";
                 var notifiedMods = new HashSet<string>();
@@ -262,12 +264,14 @@ namespace ProximityAlert
 
                 // entities
                 foreach (var entity in GameController.EntityListWrapper.Entities
-                    .Where(x => x.Type == EntityType.Chest ||
-                                x.Type == EntityType.Monster ||
-                                x.Type == EntityType.IngameIcon ||
-                                x.Type == EntityType.MiscellaneousObjects)
-                    .Where(entity => !entity.HasComponent<Chest>() || !entity.IsOpened)
-                    .Where(entity => !entity.HasComponent<Monster>() || (entity.IsAlive && entity.IsValid))
+                    .Where(entity => entity.Type == EntityType.Monster)
+                    .Where(entity => entity.IsAlive && entity.IsValid)
+                    // .Where(x => x.Type == EntityType.Chest ||
+                    //             x.Type == EntityType.Monster ||
+                    //             x.Type == EntityType.IngameIcon ||
+                    //             x.Type == EntityType.MiscellaneousObjects)
+                    // .Where(entity => !entity.HasComponent<Chest>() || !entity.IsOpened)
+                    // .Where(entity => !entity.HasComponent<Monster>() || (entity.IsAlive && entity.IsValid))
                     .OrderBy(x => x.DistancePlayer))
                 {
                     var match = false;
@@ -336,7 +340,13 @@ namespace ProximityAlert
                     // Process Beast Filters
                     if (Settings.ShowBeastAlerts && !match)
                     {
-                        ProcessFilters(_beastDict, e => e.RenderName);
+                        entity.Stats.TryGetValue(GameStat.IsCapturableMonster, out var isBeast);
+
+                        DebugWindow.LogMsg($"IsBeast: {entity.RenderName} {isBeast}");
+                        if (isBeast == 1)
+                        {
+                            ProcessFilters(_beastDict, e => e.RenderName);
+                        }
                     }
 
                     // Hardcoded Chests
