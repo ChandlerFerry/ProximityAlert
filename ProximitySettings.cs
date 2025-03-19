@@ -19,9 +19,11 @@ public class ProximitySettings : ISettings
     public ToggleNode EnableMultithreading { get; set; } = new ToggleNode(true);
 
     [Menu(null, "By default this covers things such as corrupting blood")]
+    public ToggleNode ShowBeastAlerts { get; set; } = new ToggleNode(false);
+
     public ToggleNode ShowModAlerts { get; set; } = new ToggleNode(false);
     
-    public ToggleNode ShowBeastAlerts { get; set; } = new ToggleNode(false);
+    public ToggleNode ShowPathAlerts { get; set; } = new ToggleNode(true);
 
     public ToggleNode DrawALineToRealSirus { get; set; } = new ToggleNode(true);
 

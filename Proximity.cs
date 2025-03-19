@@ -301,15 +301,14 @@ namespace ProximityAlert
                         }
                     }
 
-                    // Contains Check
-                    if (!match)
+                    void ProcessFilters(Dictionary<string, Warning> filterDict, Func<Entity, string> keySelector)
                     {
-                        foreach (var filterEntry in _pathDict.Where(x => ePath.Contains(x.Key)).Take(1))
+                        foreach (var filterEntry in filterDict.Where(x => keySelector(entity).Contains(x.Key)).Take(1))
                         {
                             var filter = filterEntry.Value;
                             unopened = $"{filter.Text}\n{unopened}";
-                            if (filter.Distance == -1 || filter.Distance == -2 && entity.IsValid ||
-                                distance < filter.Distance)
+
+                            if (filter.Distance == -1 || (filter.Distance == -2 && entity.IsValid) || distance < filter.Distance)
                             {
                                 if (soundStatus == null)
                                 {
@@ -328,31 +327,16 @@ namespace ProximityAlert
                         }
                     }
 
-                    // Beast Check
-                    if (!match)
+                    // Process Path Filters
+                    if (Settings.ShowPathAlerts && !match)
                     {
-                        foreach (var filterEntry in _beastDict.Where(x => entity.RenderName.Contains(x.Key)).Take(1))
-                        {
-                            var filter = filterEntry.Value;
-                            unopened = $"{filter.Text}\n{unopened}";
-                            if (filter.Distance == -1 || filter.Distance == -2 && entity.IsValid ||
-                                distance < filter.Distance)
-                            {
-                                if (soundStatus == null)
-                                {
-                                    soundStatus = new SoundStatus(this, entity, filter.SoundFile);
-                                    entity.SetHudComponent(soundStatus);
-                                }
+                        ProcessFilters(_pathDict, e => e.Path);
+                    }
 
-                                soundStatus.PlaySoundOnce();
-
-                                lineText = filter.Text;
-                                lineColor = filter.Color;
-                                match = true;
-                                lines++;
-                                break;
-                            }
-                        }
+                    // Process Beast Filters
+                    if (Settings.ShowBeastAlerts && !match)
+                    {
+                        ProcessFilters(_beastDict, e => e.RenderName);
                     }
 
                     // Hardcoded Chests
